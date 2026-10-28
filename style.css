@@ -2,8 +2,21 @@ body {
     background-color: #121212;
 }
     h1 {
-        color: red;
-        text-align:center;
+       color: crimson;
+       text-align:center;
+       font-family: "Cinzel" , Georgia , serif;
+       font-size:56px;
+       letter-spacing: 4px;
+       text-transform: uppercase;
+       margin-bottom:10px;
+
+}
+.subtitulo {
+    color: #c5c5c5;
+    font-family: Arial, sans-serif;
+    font-size:18px;
+    letter-spacing: 2px;
+    margin-top: 0;
 }
     p {
         color:aliceblue;
@@ -26,6 +39,10 @@ body {
 
 h2{
     color: white;
+    font-family:"Cinzel",Georgia, serif;
+    font-size: 32px;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
 }
 .tarjeta{
     background-color: #242424;
@@ -33,6 +50,8 @@ h2{
     padding: 20px;
     border-radius: 12px;
     margin: 20px 0;
+    border: 1px solid #444;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 .tarjeta img{
     width: 100%;
@@ -40,6 +59,11 @@ h2{
     object-fit: cover;
     object-position: center;
     margin-bottom: 15px;
+    border-radius: 8px;
+}
+.tarjeta:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(220, 20, 60, 0.3);
 }
 .tarjeta h3{
     color: crimson;
@@ -48,14 +72,18 @@ h2{
     display: inline-block;
     background-color: darkred;
     color: white;
-    padding: 30px;
+    padding:15px 30px;
     border-radius: 8px;
     text-decoration: none;
+    font-family:Arial, sans-serif;
+    font-weight: bold;
+    transition: background-color 1s, transform 1s;
 
 }
 .boton:hover {
     background-color: crimson;
     cursor: pointer;
+    transform: translateY(-5px);
 }
 html {
     scroll-behavior: smooth;
@@ -79,6 +107,11 @@ html {
     margin-top: 40px;
     background-color: #1e1e1e;
 }
+.historia p {
+    max-width: 700px;
+    margin: 20px auto;
+    line-height: 1.7;
+}
 .boton-historia {
     background-color: darkblue;
 }
@@ -93,14 +126,29 @@ html {
     border: none;
     border-radius: 8px;
     cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
 }
 #mostrar-historia:hover {
     background-color: crimson;
+    transform: translateY(-5px);
 }
 .tarjeta h3.nombre-nero {
     color:dodgerblue;
 }
 @media (max-width: 600px){
+    h1{
+        font-size: 36px;
+        letter-spacing: 2px;
+    }
+    h2 {
+        font-size: 26px;
+    }
+    .subtitulo{
+        font-size: 16px;
+        letter-spacing: 1px;
+    }
     .contenedor-tarjetas{
         display:flex;
         flex-direction: column;
@@ -119,4 +167,61 @@ html {
     flex-wrap: wrap;
     justify-content:center;
 }
+}
+.imagen-principal {
+    width: 500px;
+    max-width: 90%;
+    height: auto;
+    border-radius: 12px;
+    
+}
+.tarjeta-vergil:hover{
+    box-shadow: 0 10px 20px rgba(65, 105, 225, 0.5);
+}
+.tarjeta-nero:hover{
+    box-shadow: 0 10px 20px rgba(30, 144 ,255, 0.5);
+    
+}
+.tarjeta p {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #dedede;
+}
+.tarjeta h3{
+    font-family: Arial, sans-serif;
+    font-size: 22px;
+    margin: 15px 0 10px;
+}
+.pie-pagina {
+    padding: 25px 20px;
+    background-color: #181818;
+    border-top: 1px solid #444;
+}
+.pie-pagina p {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #aaa;
+    line-height: 1.6;
+}
+.pie-pagina {
+    text-align: center;
+}
+
+.volver-arriba {
+    display: inline-block;
+    margin-top: 10px;
+    color:#ddd;
+    font-family: Arial, sans-serif;
+    text-decoration: none;
+}
+.volver-arriba:hover {
+    color: crimson;
+    text-decoration: underline;
+}
+.boton:focus-visible,
+#mostrar-hisoria: focus-visible,
+.volver-arriba: focus-visible{
+    outline: 3px solid white;
+    outline-offset: 4px;
 }
