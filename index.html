@@ -10,9 +10,18 @@
         <link rel="stylesheet" href="style.css">
 </head>
 <body id="inicio">
+    <div id="fondo-multimedia" aria-hidden="true">
+    <img id="fondo-imagen" src="DvV.jpg" alt="">
+
+    <video id="fondo-video" muted playsinline preload="metadata" hidden>
+        <source src="DantevsVergil.mp4" type="video/mp4">
+    </video>
+
+    <div class="capa-oscura"></div>
+</div>
         <h1>Historia de Devil May Cry</h1>
         <P class="subtitulo">La historia de los hijos de Sparda</P>
-        <img class="imagen-principal" src="DevilMayCry.jpg" alt="Dante de Devil May Cry">
+    
     <div class="botones">
         <a href="#Personajes" class="boton">Personajes</a>
         <a href="#Historia" class="boton boton-historia">Historia</a>
@@ -20,28 +29,66 @@
 <section class="Personajes" id="Personajes">
 
     <h2>Personajes principales</h2>
-
+<div class="buscador">
+     <label for="buscar-personaje">Buscar Personaje:</label>
+     <input
+     type="search"
+     id="buscar-personaje"
+     placeholder="Escribe Dante, Vergil o Nero"
+     >
+     <P id="contador-resultados" hidden>Personajes encontrados: 3</P>
+     <p id="sin-resultados" role="status" hidden>
+        No se encontraron personajes.
+     </p>
+</div>
      <div class="contenedor-tarjetas">
 
-    <div class="tarjeta">
-        <img src="dante.jpg" alt="Dante">
+    <div class="tarjeta" id="tarjeta-dante"
+        role="button" tabindex="0"
+        aria-expanded="false" aria-controls="detalle-dante">
+         <img src="dante.jpg" alt="Dante">
         <h3>Dante</h3>
-        <p>Un cazador de demonios, hijo de Sparda.</p>
+        <p>Un cazador de demonios, hijo de Sparda.</p> 
+
+<p id="detalle-dante" hidden> 
+    Dante utiliza la espada de Rebelion y las pistolas Ebony e Ivory.
+</p>
+
     </div>
     
-    <div class="tarjeta tarjeta-vergil">
+    <div class="tarjeta" id="tarjeta-vergil"
+     role="button" tabindex="0"
+     aria-expanded="false" aria-controls="detalle-vergil">
+
         <img src="Vergil1.jpg" alt="Vergil1">
         <h3 class="nombre-vergil">Vergil</h3>
         <p>Hermano de Dante, el Demonio Urizen</p>
+    
+        <p id="detalle-vergil" hidden> 
+    Vergil usa la katana Yamato, que es capar de abrir portales
+    entre el inframundo y el mundo humano, tambien puede separar
+    al humano del demonio en su interior.
+</p>
+
     </div>
 
-    <div class="tarjeta tarjeta-nero">
+    <div class="tarjeta" id="tarjeta-nero"
+    role="button" tabindex="0"
+    aria-expanded="false" aria-controls="detalle-nero">
+
         <img src="nero.jpg" alt="Nero">
+
         <h3 class="nombre-nero">Nero</h3>
         <p>
             Hijo de Vergil y sobrino de Dante.
             Es un joven cazador de demonios.
         </p>
+<p id="detalle-nero" hidden> 
+    Nero usa la espada Yamato como un brazo demoniaco,
+    pierde a Yamato en su enfrentamiento contra Vergil
+    y ahora usa su brazos mecanicos de alta tecnologia.
+</p>
+
     </div>
     </div>
 </section>
@@ -71,9 +118,6 @@
 </button>
 
 </section>
-
-   
-
       <footer class="pie-pagina">
         <a href="#inicio" class="volver-arriba">Volver arriba</a>
         <p>Proyecto de practica frontend-Anghelo</p>
@@ -81,4 +125,5 @@
       </footer>
          <script src="script.js"></script>
 </body>
+
 </html>
