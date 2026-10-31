@@ -1,59 +1,133 @@
+
+/* Estilos generales */
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: #121212;
-}
-    h1 {
-       color: crimson;
-       text-align:center;
-       font-family: "Cinzel" , Georgia , serif;
-       font-size:56px;
-       letter-spacing: 4px;
-       text-transform: uppercase;
-       margin-bottom:10px;
-
-}
-.subtitulo {
-    color: #c5c5c5;
-    font-family: Arial, sans-serif;
-    font-size:18px;
-    letter-spacing: 2px;
-    margin-top: 0;
-}
-    p {
-        color:aliceblue;
-        text-align:center;
+    position: relative;
+    isolation: isolate;
+    min-height: 100vh;
 }
 
-     img {
-        display: block;
+p {
+    color: aliceblue;
+    text-align: center;
+}
+
+img {
+    display: block;
     width: 300px;
-        height:auto;
-        max-width: 100%;
-        margin: 0 auto 30px;
-}
-    .botones {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-
+    height: auto;
+    max-width: 100%;
+    margin: 0 auto 30px;
 }
 
-h2{
+
+/* Tipografía */
+
+h1 {
+    color: crimson;
+    text-align: center;
+    font-family: "Cinzel", Georgia, serif;
+    font-size: 56px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+h2 {
     color: white;
-    font-family:"Cinzel",Georgia, serif;
+    font-family: "Cinzel", Georgia, serif;
     font-size: 32px;
     letter-spacing: 2px;
     margin-bottom: 30px;
 }
-.tarjeta{
+
+.subtitulo {
+    color: #c5c5c5;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin-top: 0;
+}
+
+
+/* Navegación y botones */
+
+.botones {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.boton {
+    display: inline-block;
+    background-color: darkred;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    transition: background-color 1s, transform 1s;
+}
+
+.boton:hover {
+    background-color: crimson;
+    cursor: pointer;
+    transform: translateY(-5px);
+}
+
+.boton-historia {
+    background-color: darkblue;
+}
+
+.boton-historia:hover {
+    background-color: royalblue;
+}
+
+.boton:focus-visible,
+#mostrar-historia:focus-visible,
+.volver-arriba:focus-visible {
+    outline: 3px solid white;
+    outline-offset: 4px;
+}
+
+
+/* Personajes y tarjetas */
+
+.Personajes {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.contenedor-tarjetas {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.tarjeta {
     background-color: #242424;
     width: 250px;
     padding: 20px;
     border-radius: 12px;
     margin: 20px 0;
     border: 1px solid #444;
+    cursor: pointer;
     transition: transform 0.3s, box-shadow 0.3s;
 }
-.tarjeta img{
+
+.tarjeta[hidden] {
+    display: none;
+}
+
+.tarjeta img {
     width: 100%;
     height: 350px;
     object-fit: cover;
@@ -61,68 +135,127 @@ h2{
     margin-bottom: 15px;
     border-radius: 8px;
 }
-.tarjeta:hover{
-    transform: translateY(-8px);
-    box-shadow: 0 10px 20px rgba(220, 20, 60, 0.3);
-}
-.tarjeta h3{
-    color: crimson;
-}
-.boton {
-    display: inline-block;
-    background-color: darkred;
-    color: white;
-    padding:15px 30px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-family:Arial, sans-serif;
-    font-weight: bold;
-    transition: background-color 1s, transform 1s;
 
+.tarjeta h3 {
+    color: crimson;
+    font-family: Arial, sans-serif;
+    font-size: 22px;
+    margin: 15px 0 10px;
 }
-.boton:hover {
-    background-color: crimson;
-    cursor: pointer;
-    transform: translateY(-5px);
+
+.tarjeta p {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #dedede;
 }
-html {
-    scroll-behavior: smooth;
-}
-.Personajes{
-    text-align: center;
-    margin-top: 40px;
-}
-.contenedor-tarjetas {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap:20px;
-    flex-wrap: wrap;
-}
+
+/* Nombres de personajes */
+
 .tarjeta h3.nombre-vergil {
     color: royalblue;
 }
-.historia{
+
+.tarjeta h3.nombre-nero {
+    color: dodgerblue;
+}
+
+/* Animación general */
+
+.tarjeta:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(220, 20, 60, 0.3);
+}
+
+/* Sombras personalizadas */
+
+#tarjeta-dante:hover {
+    box-shadow: 0 10px 20px rgba(220, 20, 60, 0.6);
+}
+
+#tarjeta-vergil:hover {
+    box-shadow: 0 10px 20px rgba(65, 105, 225, 0.5);
+}
+
+#tarjeta-nero:hover {
+    box-shadow: 0 10px 20px rgba(30, 144, 255, 0.5);
+}
+
+/* Foco para navegación con teclado */
+
+#tarjeta-dante:focus-visible {
+    outline: 2px solid crimson;
+    outline-offset: 4px;
+}
+
+#tarjeta-vergil:focus-visible {
+    outline: 2px solid royalblue;
+    outline-offset: 4px;
+}
+
+/* Detalles desplegables */
+
+#detalle-dante {
+    margin-top: 15px;
+    line-height: 1.6;
+    color: #ddd;
+}
+
+
+/*05. BUSCADOR DE PERSONAJES*/
+
+.buscador {
+    margin: 0 auto 30px;
+    padding: 0 20px;
+    max-width: 400px;
+    text-align: left;
+}
+
+.buscador label {
+    display: block;
+    margin-bottom: 10px;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+.buscador input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 12px 15px;
+    background-color: #242424;
+    color: white;
+    border: 1px solid #666;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+.buscador input:focus-visible {
+    outline: 2px solid crimson;
+    outline-offset: 3px;
+}
+
+
+/* 06. HISTORIA */
+
+.historia {
     text-align: center;
     padding: 40px 20px;
     margin-top: 40px;
     background-color: #1e1e1e;
 }
+
 .historia p {
     max-width: 700px;
     margin: 20px auto;
     line-height: 1.7;
 }
-.boton-historia {
-    background-color: darkblue;
-}
-.boton-historia:hover{
-    background-color: royalblue;
-}
+
 #mostrar-historia {
-    display:inline-block;
+    display: inline-block;
     background-color: darkred;
-    color:white;
+    color: white;
     padding: 15px 25px;
     border: none;
     border-radius: 8px;
@@ -131,167 +264,54 @@ html {
     font-weight: bold;
     transition: background-color 0.3s, transform 0.3s;
 }
+
 #mostrar-historia:hover {
     background-color: crimson;
     transform: translateY(-5px);
 }
-.tarjeta h3.nombre-nero {
-    color:dodgerblue;
-}
-@media (max-width: 600px){
-    h1{
-        font-size: 36px;
-        letter-spacing: 2px;
-    }
-    h2 {
-        font-size: 26px;
-    }
-    .subtitulo{
-        font-size: 16px;
-        letter-spacing: 1px;
-    }
-    .contenedor-tarjetas{
-        display:flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width:100%;
-    }
 
-.tarjeta{
-    width: 80%;
-    max-width: 300px;
-    box-sizing: border-box;
-    margin:15px auto;
-}
-.botones {
-    flex-wrap: wrap;
-    justify-content:center;
-}
-}
-.imagen-principal {
-    width: 500px;
-    max-width: 90%;
-    height: auto;
-    border-radius: 12px;
-    
-}
-.tarjeta-vergil:hover{
-    box-shadow: 0 10px 20px rgba(65, 105, 225, 0.5);
-}
-.tarjeta-nero:hover{
-    box-shadow: 0 10px 20px rgba(30, 144 ,255, 0.5);
-    
-}
-.tarjeta p {
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    color: #dedede;
-}
-.tarjeta h3{
-    font-family: Arial, sans-serif;
-    font-size: 22px;
-    margin: 15px 0 10px;
-}
+
+/* 07. PIE DE PÁGINA*/
+
 .pie-pagina {
     padding: 25px 20px;
     background-color: #181818;
     border-top: 1px solid #444;
+    text-align: center;
 }
+
 .pie-pagina p {
     font-family: Arial, sans-serif;
     font-size: 14px;
     color: #aaa;
     line-height: 1.6;
 }
-.pie-pagina {
-    text-align: center;
-}
 
 .volver-arriba {
     display: inline-block;
     margin-top: 10px;
-    color:#ddd;
+    color: #ddd;
     font-family: Arial, sans-serif;
     text-decoration: none;
 }
+
 .volver-arriba:hover {
     color: crimson;
     text-decoration: underline;
 }
-.boton:focus-visible,
-#mostrar-hisoria: focus-visible,
-.volver-arriba: focus-visible{
-    outline: 3px solid white;
-    outline-offset: 4px;
-}
-.buscador {
-    margin: 0 auto 30px;
-    padding: 0 20px;
-    max-width: 400px;
-    text-align: left;
-}
- .buscador label {
-    display: block;
-    margin-bottom: 10px;
-    color: white;
-    font-family: Arial, sans-serif;
-    font-size: 16px;
- }
- .buscador input{
-    box-sizing: border-box;
-    width: 100%;
-    padding: 12px 15px;
-    background-color: #242424;
-    color:white;
-    border: 1px solid #666;
-    border-radius : 8px;
-    font-family: Arial, sans-serif;
-    font-size: 16px;
- }
- .buscador input:focus-visible{
-    outline: 2px solid crimson;
-    outline-offset: 3px;
- }
- #detalle-dante{
-    margin-top: 15px;
-    line-height: 1.6;
-    color: #ddd;
 
- }
- #tarjeta-dante{
-    cursor: pointer;
- }
- #tarjeta-dante:focus-visible {
-    outline: 2px solid crimson;
-    outline-offset: 4px;
- }
- #tarjeta-vergil{
-    cursor: pointer;
- }
- #tarjeta-vergil:focus-visible {
-    outline: 2px solid royalblue;
-    outline-offset: 4px;
- }
- #tarjeta-dante,
-#tarjeta-vergil,
-#tarjeta-nero {
-    cursor: pointer;
-}
-body {
-    position: relative;
-    isolation: isolate;
-    min-height: 100vh;
-}
+
+/* 08. FONDO MULTIMEDIA */
 
 #fondo-multimedia {
     position: fixed;
     inset: 0;
     z-index: -1;
     pointer-events: none;
-    background-color: #121212;
+    background-color: black;
 }
+
+/* Imagen y video */
 
 #fondo-imagen,
 #fondo-video {
@@ -304,43 +324,26 @@ body {
     border-radius: 0;
     object-fit: cover;
     object-position: center;
+    filter: contrast(1.12) saturate(0.85) brightness(0.9);
 }
+
+/* Posición de la imagen en PC */
+
+#fondo-imagen {
+    object-position: center top;
+}
+
+/* Ocultar multimedia cuando corresponde */
 
 #fondo-multimedia [hidden] {
     display: none;
 }
 
-.capa-oscura {
-    position: absolute;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.65);
-}
-@media (max-width: 600px) {
-    #fondo-imagen,
-    #fondo-video {
-        object-fit: contain;
-        object-position: center;
-    }
-
-    #fondo-multimedia {
-        background-color: black;
-    }
-
-    .capa-oscura {
-        background: linear-gradient(
-            to bottom,
-            rgba(0, 0, 0, 0.65),
-            rgba(0, 0, 0, 0.35) 50%,
-            rgba(0, 0, 0, 0.75)
-        );
-    }
-}
-#fondo-imagen,
-#fondo-video {
-    filter: contrast(1.12) saturate(0.85) brightness(0.9);
-}
+/* Capa oscura sobre el fondo */
 
 #fondo-multimedia .capa-oscura {
+    position: absolute;
+    inset: 0;
     background:
         radial-gradient(
             ellipse at center,
@@ -354,17 +357,62 @@ body {
             rgba(0, 0, 0, 0.75)
         );
 }
-#fondo-imagen {
-    object-fit: cover;
-    object-position: center top;
-}
 
-#fondo-multimedia {
-    background-color: black;
-}
+
+/* 09. DISEÑO RESPONSIVE */
+
 @media (max-width: 600px) {
+
+    /* Tipografía */
+
+    h1 {
+        font-size: 36px;
+        letter-spacing: 2px;
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+
+    .subtitulo {
+        font-size: 16px;
+        letter-spacing: 1px;
+    }
+
+    /* Navegación */
+
+    .botones {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* Tarjetas */
+
+    .contenedor-tarjetas {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .tarjeta {
+        width: 80%;
+        max-width: 300px;
+        box-sizing: border-box;
+        margin: 15px auto;
+    }
+
+    /* Fondo multimedia en celular */
+
     #fondo-multimedia {
+        background-color: black;
         overflow: hidden;
+    }
+
+    #fondo-imagen {
+        object-fit: contain;
+        object-position: center top;
     }
 
     #fondo-video {

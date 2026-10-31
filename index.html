@@ -1,129 +1,195 @@
+
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Devil May Cry</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devil May Cry</title>
+
+    <!-- Fuente de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body id="inicio">
+
+    <!-- Fondo multimedia -->
     <div id="fondo-multimedia" aria-hidden="true">
-    <img id="fondo-imagen" src="DvV.jpg" alt="">
+        <img id="fondo-imagen" src="DvV.jpg" alt="">
 
-    <video id="fondo-video" muted playsinline preload="metadata" hidden>
-        <source src="DantevsVergil.mp4" type="video/mp4">
-    </video>
+        <video id="fondo-video" muted playsinline preload="metadata" hidden>
+            <source src="DantevsVergil.mp4" type="video/mp4">
+        </video>
 
-    <div class="capa-oscura"></div>
-</div>
+        <div class="capa-oscura"></div>
+    </div>
+
+    <!-- Encabezado -->
+    <header>
         <h1>Historia de Devil May Cry</h1>
-        <P class="subtitulo">La historia de los hijos de Sparda</P>
-    
-    <div class="botones">
-        <a href="#Personajes" class="boton">Personajes</a>
-        <a href="#Historia" class="boton boton-historia">Historia</a>
-    </div>
-<section class="Personajes" id="Personajes">
+        <p class="subtitulo">La historia de los hijos de Sparda</p>
 
-    <h2>Personajes principales</h2>
-<div class="buscador">
-     <label for="buscar-personaje">Buscar Personaje:</label>
-     <input
-     type="search"
-     id="buscar-personaje"
-     placeholder="Escribe Dante, Vergil o Nero"
-     >
-     <P id="contador-resultados" hidden>Personajes encontrados: 3</P>
-     <p id="sin-resultados" role="status" hidden>
-        No se encontraron personajes.
-     </p>
-</div>
-     <div class="contenedor-tarjetas">
+        <!-- Navegación -->
+        <nav class="botones" aria-label="Navegación principal">
+            <a href="#Personajes" class="boton">Personajes</a>
+            <a href="#Historia" class="boton boton-historia">Historia</a>
+        </nav>
+    </header>
 
-    <div class="tarjeta" id="tarjeta-dante"
-        role="button" tabindex="0"
-        aria-expanded="false" aria-controls="detalle-dante">
-         <img src="dante.jpg" alt="Dante">
-        <h3>Dante</h3>
-        <p>Un cazador de demonios, hijo de Sparda.</p> 
+    <main>
 
-<p id="detalle-dante" hidden> 
-    Dante utiliza la espada de Rebelion y las pistolas Ebony e Ivory.
-</p>
+        <!-- Personajes -->
+        <section class="Personajes" id="Personajes">
+            <h2>Personajes principales</h2>
 
-    </div>
-    
-    <div class="tarjeta" id="tarjeta-vergil"
-     role="button" tabindex="0"
-     aria-expanded="false" aria-controls="detalle-vergil">
+            <!-- Buscador -->
+            <div class="buscador">
+                <label for="buscar-personaje">Buscar personaje:</label>
 
-        <img src="Vergil1.jpg" alt="Vergil1">
-        <h3 class="nombre-vergil">Vergil</h3>
-        <p>Hermano de Dante, el Demonio Urizen</p>
-    
-        <p id="detalle-vergil" hidden> 
-    Vergil usa la katana Yamato, que es capar de abrir portales
-    entre el inframundo y el mundo humano, tambien puede separar
-    al humano del demonio en su interior.
-</p>
+                <input
+                    type="search"
+                    id="buscar-personaje"
+                    placeholder="Escribe Dante, Vergil o Nero"
+                >
 
-    </div>
+                <p id="contador-resultados" hidden>
+                    Personajes encontrados: 3
+                </p>
 
-    <div class="tarjeta" id="tarjeta-nero"
-    role="button" tabindex="0"
-    aria-expanded="false" aria-controls="detalle-nero">
+                <p id="sin-resultados" role="status" hidden>
+                    No se encontraron personajes.
+                </p>
+            </div>
 
-        <img src="nero.jpg" alt="Nero">
+            <!-- Tarjetas -->
+            <div class="contenedor-tarjetas">
 
-        <h3 class="nombre-nero">Nero</h3>
-        <p>
-            Hijo de Vergil y sobrino de Dante.
-            Es un joven cazador de demonios.
-        </p>
-<p id="detalle-nero" hidden> 
-    Nero usa la espada Yamato como un brazo demoniaco,
-    pierde a Yamato en su enfrentamiento contra Vergil
-    y ahora usa su brazos mecanicos de alta tecnologia.
-</p>
+                <!-- Dante -->
+                <div
+                    class="tarjeta"
+                    id="tarjeta-dante"
+                    role="button"
+                    tabindex="0"
+                    aria-expanded="false"
+                    aria-controls="detalle-dante"
+                >
+                    <img src="dante.jpg" alt="Dante">
 
-    </div>
-    </div>
-</section>
-        
-<section class="historia" id="Historia">
-    <h2>Historia de Devil May Cray</h2>
+                    <h3>Dante</h3>
 
-    <p>
-        Devil May Cry es la historia de los hermanos, separados por la tragedia,
-        cuando eran niños un demonio mato a su madre y ambos fueron separados. Dante 
-        se quedo en el mundo de los humanos y se convirtio en un cazademonios amante 
-        de las pizzas.
-    </p>
+                    <p>
+                        Un cazador de demonios, hijo de Sparda.
+                    </p>
 
-    <p>
-        Su hermano Vergil, esta obsesionado por el poder, separo
-        su parte humana de su parte demoniaca , naciendo el demonio Urizen y V.
-    </p>
+                    <p id="detalle-dante" hidden>
+                        Dante utiliza la espada Rebelión y las pistolas
+                        Ebony e Ivory.
+                    </p>
+                </div>
 
-    <p id="historia-extra" hidden>
-    Dante y Vergil son hijos de Sparda, un poderoso demonio 
-    que decidio proteger a la humanidad.
-    Ambos hermanos eligieron caminos diferentes 
-</p>
-<button id="mostrar-historia">
-    Mostrar mas historia
-</button>
+                <!-- Vergil -->
+                <div
+                    class="tarjeta"
+                    id="tarjeta-vergil"
+                    role="button"
+                    tabindex="0"
+                    aria-expanded="false"
+                    aria-controls="detalle-vergil"
+                >
+                    <img src="Vergil1.jpg" alt="Vergil">
 
-</section>
-      <footer class="pie-pagina">
+                    <h3 class="nombre-vergil">Vergil</h3>
+
+                    <p>
+                        Hermano de Dante y otra mitad del demonio Urizen.
+                    </p>
+
+                    <p id="detalle-vergil" hidden>
+                        Vergil utiliza la katana Yamato, capaz de abrir
+                        portales entre el inframundo y el mundo humano.
+                        También puede separar su parte humana de su
+                        parte demoníaca.
+                    </p>
+                </div>
+
+                <!-- Nero -->
+                <div
+                    class="tarjeta"
+                    id="tarjeta-nero"
+                    role="button"
+                    tabindex="0"
+                    aria-expanded="false"
+                    aria-controls="detalle-nero"
+                >
+                    <img src="nero.jpg" alt="Nero">
+
+                    <h3 class="nombre-nero">Nero</h3>
+
+                    <p>
+                        Hijo de Vergil y sobrino de Dante.
+                        Es un joven cazador de demonios.
+                    </p>
+
+                    <p id="detalle-nero" hidden>
+                        Nero utiliza la espada Red Queen y un revólver
+                        llamado Blue Rose. Después de perder su brazo
+                        demoníaco, utiliza brazos mecánicos de alta
+                        tecnología llamados Devil Breakers.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Historia -->
+        <section class="historia" id="Historia">
+            <h2>Historia de Devil May Cry</h2>
+
+            <p>
+                Devil May Cry cuenta la historia de dos hermanos
+                separados por una tragedia. Cuando eran niños,
+                unos demonios atacaron a su familia y su madre murió.
+                Dante permaneció en el mundo humano y se convirtió
+                en un cazador de demonios amante de las pizzas.
+            </p>
+
+            <p>
+                Su hermano Vergil está obsesionado con obtener poder.
+                Utilizando la katana Yamato, separó su parte humana
+                de su parte demoníaca, dando origen a V y Urizen.
+            </p>
+
+            <p id="historia-extra" hidden>
+                Dante y Vergil son hijos de Sparda, un poderoso demonio
+                que decidió proteger a la humanidad. Ambos hermanos
+                eligieron caminos diferentes.
+            </p>
+
+            <button id="mostrar-historia" type="button">
+                Mostrar más historia
+            </button>
+        </section>
+
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="pie-pagina">
         <a href="#inicio" class="volver-arriba">Volver arriba</a>
-        <p>Proyecto de practica frontend-Anghelo</p>
-        <p>Sitio de fans de Devil May Cry, sin afiliacion oficial</p>
-      </footer>
-         <script src="script.js"></script>
-</body>
 
+        <p>Proyecto de práctica frontend - Anghelo</p>
+
+        <p>
+            Sitio de fans de Devil May Cry, sin afiliación oficial.
+        </p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
 </html>
