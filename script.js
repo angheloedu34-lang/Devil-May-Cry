@@ -179,3 +179,25 @@ tarjetasInteractivas.forEach(function(tarjeta) {
         }
     });
 });
+
+const musica = document.getElementById("musica-fondo");
+const botonMusica = document.getElementById("boton-musica");
+
+musica.volume = 0.2; // Volumen inicial: 20 %
+
+botonMusica.addEventListener("click", async function () {
+    if (musica.paused) {
+        try {
+            await musica.play();
+            botonMusica.textContent = "🔇 Pausar música";
+            botonMusica.setAttribute("aria-pressed", "true");
+        } catch (error) {
+            botonMusica.textContent = "Reintentar música";
+            console.error("No se pudo reproducir el audio:", error);
+        }
+    } else {
+        musica.pause();
+        botonMusica.textContent = "🎵 Activar música";
+        botonMusica.setAttribute("aria-pressed", "false");
+    }
+});
